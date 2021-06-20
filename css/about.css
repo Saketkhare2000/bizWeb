@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,600;0,700;1,400&display=swap');
+/* boilerplate for css  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+:root {
+  --bizBlack: #171717;
+  --bizWhite: #f9f9f9;
+  --bizAccent: #ff7b2e;
+}
+
+body {
+  background: var(--bizWhite);
+  font-family: 'Google sans', sans-serif;
+
+}
+
+.section {
+  padding: 50px 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  height: 10vh;
+  background: var(--bizBlack);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 120px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar .logo {
+  color: var(--bizAccent);
+  font-size: 26px;
+  font-weight: 800;
+}
+.navbar .navLinks ul {
+  width: 300px;
+  color: white;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+.navbar .navLinks .navLink {
+  transition: all 0.2s ease;
+}
+.navbar .navLinks .navLink:hover {
+  color: var(--bizAccent);
+}
+.burger {
+  color: var(--bizWhite);
+  display: none;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1528747045269-390fe33c19f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero .overlay {
+  background-color: #0000009a;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero .overlay .title {
+  color: var(--bizWhite);
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.hero .overlay .text {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--bizWhite);
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: var(--bizAccent);
+  padding: 15px 30px;
+  border-radius: 4px;
+  color: var(--bizWhite);
+  font-weight: 600;
+  transition: all 0.1s ease-in-out;
+}
+.btn:hover {
+  background-color: #ff6811;
+  transform: scale(1.03);
+}
+/* Story Section CSS */
+
+.title {
+    font-size: 56px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 800;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .imgHolder{
+    width: 300px;
+    margin-bottom: 20px;
+}
+.container img{
+    border-radius: 4px;
+    width: 100%;
+}
+.container .story{
+    color: var(--bizBlack);
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+/* Booking css */
+.booking {
+  background-color: var(--bizBlack);
+  color: var(--bizWhite);
+}
+.booking .title {
+  margin-bottom: 20px;
+}
+
+.booking .text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.srcBtn{
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--bizAccent);
+  color: var(--bizWhite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: circle(50%);
+  cursor: pointer;
+}
+/* Responsive Design */
+
+/* we use media queries to make our make our websites responsive */
+
+/* PC first */
+/* @media screen and (max-width:768px) - tablet size */
+/* @media screen and (max-width:640px) - mobile size */
+
+/* mobile first */
+/* @media screen and (min-width:768px) - tablet size */
+/* @media screen and (min-width:640px) - mobile size */
+
+
+@media screen and (min-width: 1000px){
+    .container{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .container .imgHolder{
+        width: 800px;
+    }
+    .container .story{
+        padding: 0px 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .services .cardRow {
+    flex-direction: column;
+  }
+  .navbar .navLinks ul {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .navbar {
+    padding: 0px 30px;
+  }
+  .hero .overlay .title {
+    color: var(--bizWhite);
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .hero .overlay .text {
+    color: var(--bizWhite);
+    font-size: 18px;
+  }
+  .section {
+    padding: 30px 30px;
+  }
+  .title {
+    margin-top: 30px;
+  }
+  .booking .text {
+    text-align: justify;
+  }
+}
